@@ -1,0 +1,12 @@
+body {
+  background-color: #bdc0c0;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+}
+
+.login {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
