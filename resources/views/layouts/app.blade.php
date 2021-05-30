@@ -6,9 +6,9 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-
-        <title>{{ config("app.name", "Laravel") }}</title>
-
+       
+        @yield('meta')
+       
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
             defer
@@ -48,11 +48,17 @@
             integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
             crossorigin="anonymous"
         />
+        @yield('style')
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+
     </head>
     <body>
         @include('inc.navbar')
-        <main class="py-4">@yield('content')</main>
+        <main>@yield('content')</main>
         @include('inc.footer')
+
+       @stack('scripts')
+
     </body>
 </html>

@@ -1,0 +1,13 @@
+mdlm "Fr\FrCommande" #create model migration 
+mdlm "En\EnCommande" #create model migration 
+mdlm "Ar\ArCommande" #create model migration 
+
+//pa make:controller "Fr\FrCommande" #create the controller   // no need of that
+//pa make:controller CommandeController #create the controller   // no need of that
+
+Route::namespace('Fr')->group(function(){
+Route::get('/', [App\Http\Controllers\Fr\CommandeController::class, 'index']);
+});
+
+// handle laravel error
+php artisan vendor:publish --tag=laravel-errors

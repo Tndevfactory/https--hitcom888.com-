@@ -28,21 +28,21 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img
-                src="https://picsum.photos/600/401"
+                src="https://picsum.photos/1600/401"
                 class="d-block w-100"
                 alt="..."
             />
         </div>
         <div class="carousel-item">
             <img
-                src="https://picsum.photos/600/402"
+                src="https://picsum.photos/1600/402"
                 class="d-block w-100"
                 alt="..."
             />
         </div>
         <div class="carousel-item">
             <img
-                src="https://picsum.photos/600/403"
+                src="https://picsum.photos/1600/403"
                 class="d-block w-100"
                 alt="..."
             />
