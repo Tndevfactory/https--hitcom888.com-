@@ -1,12 +1,85 @@
-body {
-  background-color: #bdc0c0;
-  font-family: "Roboto", sans-serif;
-  min-height: 100vh;
+html {
+  font-size: 16.5px;
 }
 
-.login {
-  min-height: 78vh;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #111;
+  width: 100%;
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#lang-switcher .lang_box {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  background-size: 30px 30px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#lang-switcher .lang_box_fr {
+  background-image: url("/../img/flag/fr.png");
+}
+#lang-switcher .lang_box_ar {
+  background-image: url("/../img/flag/ar.png");
+}
+#lang-switcher .lang_box_uk {
+  background-image: url("/../img/flag/uk.png");
+}
+#lang-switcher ul {
+  min-width: 9rem !important;
+}
+#lang-switcher ul li a {
+  color: #272b2b;
+  cursor: pointer;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
+}
+#lang-switcher ul li a span {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+#lang-switcher ul li a .arabic {
+  font-size: 1.2rem;
+}
+
+#drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: red;
+  min-height: 100%;
+  width: 300px;
+  z-index: 9999;
+}
+
+.wrapper {
+  position: relative;
+  /*   width:1305px; */
+  height: 500px;
+  margin: auto;
+  background: #eee;
+  overflow: hidden;
+}
+
+.boxes {
+  position: relative;
+  left: -645px;
+}
+
+.box {
+  position: absolute;
+  width: 19rem;
+  top: 15px;
+  cursor: pointer;
 }

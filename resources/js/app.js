@@ -1,5 +1,6 @@
 require("./bootstrap");
-import Animate from "./Sub";
+// import Animate from "./GsapPageFunctions";
+import Animate from "./views/pages/lab/gsap.blade";
 
 window.onload = function () {
     Animate();
