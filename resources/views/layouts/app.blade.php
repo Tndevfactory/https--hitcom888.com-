@@ -29,7 +29,7 @@
     </head>
 
     <body>
-        @include('components.navbar')
+         @include('components.navbar')
         <main>@yield('content')</main>
         @include('components.footer') @stack('scripts')
     </body>

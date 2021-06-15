@@ -1,6 +1,6 @@
 <div id="lang-switcher" class="dropdown">
     <button
-        class="btn dropdown-toggle"
+        class="btn btn-sm dropdown-toggle"
         type="button"
         id="dropdownMenuButton1"
         data-bs-toggle="dropdown"

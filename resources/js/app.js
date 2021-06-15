@@ -1,7 +1,12 @@
 require("./bootstrap");
-// import Animate from "./GsapPageFunctions";
-import Animate from "./views/pages/lab/gsap.blade";
+
+import {openDrawer} from "./views/components/navbar.blade";
+import {closeDrawer} from "./views/components/drawer.blade";
+import {AnimateCarousel, grabModalConsulterPanier} from "./views/pages/lab/gsap.blade";
 
 window.onload = function () {
-    Animate();
+    openDrawer();
+    closeDrawer()
+    AnimateCarousel();
+    grabModalConsulterPanier();
 };

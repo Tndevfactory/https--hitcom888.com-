@@ -1,0 +1,26 @@
+.panier {
+    position: relative;
+    .panier_counter {
+        position: absolute;
+        top: -12px;
+        left: 20px;
+    }
+}
+.homme_menu_item {
+    transition: 1s visibility ease-in-out;
+    .homme_div {
+        visibility: hidden;
+    }
+    &:hover .homme_div {
+        visibility: visible;
+    }
+}
+.femme_menu_item {
+    transition: 1s visibility ease-in-out;
+    .femme_div {
+        visibility: hidden;
+    }
+    &:hover .femme_div {
+        visibility: visible;
+    }
+}

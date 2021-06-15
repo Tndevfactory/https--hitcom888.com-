@@ -1,8 +1,16 @@
 @extends('layouts.app') @section('meta')
-
 <title>gsap</title>
 @endsection @section('content')
 <div class="container">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+    <li class="breadcrumb-item"><a href="#">Homme</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Parfum</li>
+  </ol>
+</nav>
+
+
     <p class="mb-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ab
         animi assumenda quas impedit, placeat commodi cupiditate praesentium
@@ -11,210 +19,131 @@
         labore quas quaerat tempore maxime laboriosam! Assumenda veritatis illum
         maiores. Optio, tempore!
     </p>
-
     <div class="wrapper">
         <div class="boxes">
-            <div class="box p1">
+            @for ($i = 0; $i < 10; $i++) <div class="box shadow-lg">
                 <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/300/202"
-                        class="card-img-top"
-                        alt="..."
-                    />
+                    <div class="promo_rate d-flex justify-content-between">
+                        <button class="btn btn-sm  badge rounded-pill bg-primary text-light">Nouveau <i class="fas fa-level-up-alt"></i></button>
+                        <button class="btn  btn-sm  badge rounded-pill bg-success text-light">-25% <i class="fas fa-sort-down"></i></button>
+                    </div>
+                    <div class="overlay">
+                        {{-- to product detail --}}
+                        <a href='#' type='button' class=" details btn btn-sm bg-primary">
+                            Details <i class="far fa-eye"></i>
+                        </a>
+                        <button type='button' data-bs-toggle="modal" data-bs-target="#exampleModal" class="commander btn  btn-sm bg-success text-light">
+                            Acheter<i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                    <img src="https://picsum.photos/300/202" class="card-img-top" alt="..." />
                     <div class="card-body">
-                        <h5 class="card-title">Card title 300/202</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
+                        <div class="name_rate_avis d-flex align-items-start ">
+                            <h5 class="card-title text-secondary">Espadrit Nike </h5>
+                            <div class="star_avis">
+                                {{-- rating avis --}}
+                                <a href="#" style="font-size: 12px; " class='stars ms-2 mt-n1 d-inline-block text-decoration-none '>
+                                    <i style="color: #ddd;" class="far fa-star"></i>
+                                    <i style="color: #ddd;" class="far fa-star"></i>
+                                    <i style="color: #ffba08;" class="fas fa-star"></i>
+                                    <i style="color: #ffba08;" class="fas fa-star"></i>
+                                    <i style="color: #ffba08;" class="fas fa-star"></i>
+                                </a>
+                                <a href="#" class="text-muted ms-1 mt-n3 d-inline-block text-decoration-none fw-light fs-6">(2)</a>
+                            </div>
+                        </div>
+                        <p class="card-text text-secondary">
+                            Espadrit Nike pump best choix pour les footballers
                         </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="price_old_new d-flex justify-content-between">
+                            <a href="#" class="btn btn-default text-success">1370 TND</a>
+                            <a href="#" class="btn btn-default text-decoration-line-through  text-muted">1470 TND</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="box p2">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/300/203"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 300/203</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+
+        {{-- modal --}}
+        <div   class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div style="background-color: #11A74B ;" class="modal-header text-light bg-success">
+                        <h6 class="modal-title" id="exampleModalLabel"><i class="fas fa-cart-arrow-down"></i> Article ajouté à votre panier</h6>
+                        <button type="button" class="btn-sm btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                </div>
-            </div>
-            <div class="box p3">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/300/205"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 300/205</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <p class="card-text">Some quick example</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4"> <img src="https://picsum.photos/300/200" class="img-thumbnail" alt="..." /></div>
+                                <div class="col-md-8">
+                                    <table class="table table-striped">
+
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Article</th>
+                                                <th scope="col">Designation</th>
+                                                <th scope="col">Quantite</th>
+                                                <th scope="col">Prix</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                              <tr class="table-success">
+                                                <th scope="row"><i class="fas fa-long-arrow-alt-right"></i></th>
+                                                <td>Bracelet</td>
+                                                <td>1</td>
+                                                <td>120.30</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+
+                                     <table class="table table-striped">
+
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Panier</th>
+                                                <th scope="col"># Articles</th>
+                                                <th scope="col">Taxes</th>
+                                                <th scope="col">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                             <tr>
+                                                <th scope="row"><i class="fas fa-cart-arrow-down"></i> </th>
+                                                <td>5</td>
+                                                <td>7.89</td>
+                                                <td>1320.89</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                   
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="box p4">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/206"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="box p5">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/207"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="box p6">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/208"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="box p7">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/209"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="box p8">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/210"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="box p9">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/201"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title p10</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="box p10">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/201"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title p11</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="box p11">
-                <div class="card" style="width: 18rem">
-                    <img
-                        src="https://picsum.photos/400/201"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title
-                            and of the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="modal-footer">
+                             
+                        <button type="button" class="continuer_achat btn btn-success" data-bs-dismiss="modal"> Continuer mes achats</button>
+                {{-- to command detail --}}
+                        <a href='#' type="button" class="consulter_panier btn btn-primary">Consulter mon panier</a>
+
                     </div>
                 </div>
             </div>
         </div>
+        @endfor
     </div>
-    <p class="mt-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ab
-        animi assumenda quas impedit, placeat commodi cupiditate praesentium
-        modi beatae tenetur facere temporibus quidem molestiae omnis dolore
-        mollitia eligendi maxime unde est ut, a expedita recusandae vel. Nobis,
-        labore quas quaerat tempore maxime laboriosam! Assumenda veritatis illum
-        maiores. Optio, tempore!
-    </p>
 </div>
-
+<p class="mt-5">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ab
+    animi assumenda quas impedit, placeat commodi cupiditate praesentium
+    modi beatae tenetur facere temporibus quidem molestiae omnis dolore
+    mollitia eligendi maxime unde est ut, a expedita recusandae vel. Nobis,
+    labore quas quaerat tempore maxime laboriosam! Assumenda veritatis illum
+    maiores. Optio, tempore!
+</p>
+</div>
 @endsection

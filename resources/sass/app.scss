@@ -1,4 +1,7 @@
 @import "./initial";
+@import "./views/components/navbar.blade";
+@import "./views/components/mega_menu/homme.blade.scss";
+@import "./views/components/mega_menu/femme.blade.scss";
 @import "./views/components/lang_switcher.blade";
 @import "./views/components/drawer.blade";
 @import "./views/pages/lab/gsap.blade";

@@ -32,7 +32,12 @@ class CommandeController extends Controller
         
             $cmAr=ArCommande::get();
             $cmFr=FrCommande::get();
+
+            
             $cmEn=EnCommande::get();
+
+
+          
 
 
         // echo($cm);
