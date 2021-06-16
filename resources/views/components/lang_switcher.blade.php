@@ -1,6 +1,6 @@
 <div id="lang-switcher" class="dropdown">
     <button
-        class="btn btn-sm dropdown-toggle"
+        class="affiche_lang btn btn-sm dropdown-toggle"
         type="button"
         id="dropdownMenuButton1"
         data-bs-toggle="dropdown"
@@ -29,7 +29,7 @@
                 href="{{ route(Route::currentRouteName() , 'ar') }}"
             >
                 <div class="lang_box lang_box_ar"></div>
-                <span class="arabic">العربية</span>
+                <span class="arabic d-none d-md-block small">العربية</span>
             </a>
         </li>
         <li>
@@ -38,7 +38,7 @@
                 href="{{ route(Route::currentRouteName() , 'en') }}"
             >
                 <div class="lang_box lang_box_uk"></div>
-                <span>English</span>
+                <span class="d-none d-md-block small">English</span>
             </a>
         </li>
         <li>
@@ -47,7 +47,7 @@
                 href="{{ route(Route::currentRouteName() , 'fr') }}"
             >
                 <div class="lang_box lang_box_fr"></div>
-                <span>Français</span>
+                <span class="d-none d-md-block small">Français</span>
             </a>
         </li>
     </ul>

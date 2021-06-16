@@ -1,5 +1,7 @@
+@charset "UTF-8";
 html {
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 * {
@@ -18,13 +20,47 @@ body {
   overflow-x: hidden;
 }
 
+.devenir_vendeur {
+  font-family: "Oswald", sans-serif;
+  text-shadow: 0.51px 0.51px 0.51px rgba(5, 44, 0, 0.732);
+  letter-spacing: 0.51px;
+}
+
+.brand_name {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.brand_logo {
+  left: 97px;
+  top: 14px;
+  transform: scale(1.5) rotate(-10deg);
+}
+
+.menu_principal {
+  font-family: "Oswald", sans-serif;
+  transform: scale(1.2);
+  letter-spacing: 0.5px;
+  color: white !important;
+}
+.menu_principal:hover {
+  color: #cbe4f8 !important;
+}
+
 .panier {
   position: relative;
 }
 .panier .panier_counter {
   position: absolute;
-  top: -12px;
-  left: 20px;
+  top: -11px;
+  left: 12px;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.61px;
+  background-color: crimson;
 }
 
 .homme_menu_item {
@@ -53,6 +89,7 @@ body {
   left: -10px;
   min-width: 50vw;
   padding: 1rem;
+  background-color: white;
   color: #333;
 }
 
@@ -62,11 +99,37 @@ body {
   left: -10px;
   min-width: 50vw;
   padding: 1rem;
+  background-color: white;
   color: #333;
+}
+.femme_div .list_group,
+.femme_div .list-group-item {
+  border: none !important;
+}
+.femme_div .list-group-item:not(:first-child) {
+  position: relative;
+}
+.femme_div .list-group-item:not(:first-child)::before {
+  content: "🆙";
+  font-size: 4px;
+  margin-right: 14px;
+  position: absolute;
+  top: 18px;
+  left: 5px;
 }
 
 #lang-switcher {
   z-index: 9999;
+}
+#lang-switcher .affiche_lang {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  box-shadow: none;
+}
+#lang-switcher .affiche_lang:hover {
+  box-shadow: none;
+  outline: none;
 }
 #lang-switcher .lang_box {
   height: 30px;
@@ -100,13 +163,13 @@ body {
   font-size: 0.9rem;
 }
 #lang-switcher ul li a .arabic {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 #drawer {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: -333px;
+  left: -413px;
   background: #fff;
   border-right: solid 1.5px rgba(50, 50, 50, 0.9);
   min-height: 100vh;
@@ -137,7 +200,7 @@ body {
   border: none !important;
 }
 #drawer a:hover {
-  color: #007BCF;
+  color: #007bcf;
   border: none !important;
 }
 

@@ -1,5 +1,16 @@
 #lang-switcher {
     z-index: 9999;
+    .affiche_lang {
+        // border: blueviolet 3px solid;
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        box-shadow: none;
+        &:hover {
+            box-shadow: none;
+            outline: none;
+        }
+    }
     .lang_box {
         height: 30px;
         width: 30px;
@@ -32,7 +43,7 @@
                     font-size: 0.9rem;
                 }
                 .arabic {
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                 }
             }
         }

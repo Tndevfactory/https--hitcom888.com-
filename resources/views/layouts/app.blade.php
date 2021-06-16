@@ -17,6 +17,8 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="{{ asset('css/roboto.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/oswald.css') }}" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
 
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link
@@ -29,8 +31,8 @@
     </head>
 
     <body>
-         @include('components.navbar')
+        @include('components.navbar')
         <main>@yield('content')</main>
-        @include('components.footer') @stack('scripts')
+        <!-- @include('components.footer') @stack('scripts')  -->
     </body>
 </html>
