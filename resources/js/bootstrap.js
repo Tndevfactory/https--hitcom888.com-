@@ -4,9 +4,13 @@ window.axios = require("axios");
 
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
+window.axios = axios.create({
+    baseURL: "http://localhost:8000/fr",
+});
+
 import { gsap } from "gsap";
 
-import { CSSPlugin} from "gsap";
+import { CSSPlugin } from "gsap";
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

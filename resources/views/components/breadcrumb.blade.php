@@ -1,7 +1,7 @@
 <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
-    <ol class="breadcrumb my-2">
+    <ol class="breadcrumb my-3">
         <li class="breadcrumb-item">
-            <a href="#"><i class="fas fa-home"></i></a>
+            <a href="{{route('welcome', App::getLocale())}}"><i class="fas fa-home"></i></a>
         </li>
         <li class="breadcrumb-item">
             <a href="#">{{ $data["level1"] }}</a>

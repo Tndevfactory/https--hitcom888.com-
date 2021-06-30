@@ -42,6 +42,6 @@ class CommandeController extends Controller
 
         // echo($cm);
        // dd($cm);
-        return view('commande.details',compact(['cmAr','cmFr','cmEn',]));
+        return view('pages.market.commande.commande',compact(['cmAr','cmFr','cmEn',]));
     }
 }

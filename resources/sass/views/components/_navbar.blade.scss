@@ -1,30 +1,46 @@
 .devenir_vendeur {
     font-family: "Oswald", sans-serif;
-    text-shadow: 0.51px 0.51px 0.51px rgba(5, 44, 0, 0.732);
-    letter-spacing: 0.51px;
+    text-shadow: 0.51px 0.51px 0.51px rgb(245, 229, 6);
+    letter-spacing: 0.41px;
 }
 .brand_name {
     font-family: "Oswald", sans-serif;
+    // font-family: "Tajawal", sans-serif;
     font-weight: 600;
     font-size: 1.75rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.51px;
     text-transform: uppercase;
+    color: #645151;
 }
 .brand_logo {
-    left: 97px;
+    left: 90px;
     top: 14px;
-
+    color: #302f2f;
     transform: scale(1.5) rotate(-10deg);
 }
+
 .menu_principal {
     font-family: "Oswald", sans-serif;
     transform: scale(1.2);
     letter-spacing: 0.5px;
-    color: white !important;
+    color: #221f1f !important;
     &:hover {
-        color: rgb(203, 228, 248) !important;
+        color: rgb(223, 167, 14) !important;
     }
 }
+
+.menu_btn {
+    font-size: 1.7rem;
+    color: rgb(22, 22, 19) !important;
+}
+
+.search_input {
+    min-width: 29rem !important;
+}
+.search_input_mobile {
+    // min-width: 12rem !important;
+}
+
 .panier {
     position: relative;
     .panier_counter {
@@ -34,7 +50,7 @@
         font-size: 0.75rem;
         font-weight: 300;
         letter-spacing: 0.61px;
-        background-color: crimson;
+        background-color: rgb(247, 12, 12);
     }
 }
 .homme_menu_item {
@@ -52,6 +68,77 @@
         visibility: hidden;
     }
     &:hover .femme_div {
+        visibility: visible;
+    }
+}
+
+// arabic class adding with  class="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}"  dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}"
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////@at-root//////@at-root
+////////////////////////////////////////////////////////////////////////////////////////////////////@at-root
+
+.devenir_vendeur_ar {
+    font-family: "Oswald", sans-serif;
+    text-shadow: 0.51px 0.51px 0.51px rgba(175, 245, 166, 0.732);
+    letter-spacing: 0.51px;
+}
+.brand_name_ar {
+    font-family: "Oswald", sans-serif;
+    // font-family: "Tajawal", sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    letter-spacing: 0.51px;
+    text-transform: uppercase;
+    color: #645151;
+}
+.brand_logo_ar {
+    left: 95px;
+    top: 14px;
+    color: #302f2f;
+
+    transform: scale(1.5) rotate(-10deg);
+}
+
+.menu_principal_ar {
+    font-family: "Oswald", sans-serif;
+    transform: scale(1.2);
+    letter-spacing: 0.5px;
+    color: #221f1f !important;
+    &:hover {
+        color: rgb(40, 72, 99) !important;
+    }
+}
+
+.menu_btn_ar {
+    font-size: 1.7rem;
+    color: rgb(22, 22, 19) !important;
+}
+.panier_ar {
+    position: relative;
+    .panier_counter_ar {
+        position: absolute;
+        top: -11px;
+        left: 12px;
+        font-size: 0.75rem;
+        font-weight: 300;
+        letter-spacing: 0.61px;
+        background-color: rgb(247, 12, 12);
+    }
+}
+.homme_menu_item_ar {
+    transition: 1s visibility ease-in-out;
+    .homme_div_ar {
+        visibility: hidden;
+    }
+    &:hover .homme_div_ar {
+        visibility: visible;
+    }
+}
+.femme_menu_item_ar {
+    transition: 1s visibility ease-in-out;
+    .femme_div_ar {
+        visibility: hidden;
+    }
+    &:hover .femme_div_ar {
         visibility: visible;
     }
 }

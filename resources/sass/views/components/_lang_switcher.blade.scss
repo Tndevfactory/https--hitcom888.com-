@@ -1,4 +1,9 @@
 #lang-switcher {
+    @media (max-width: 600px) {
+        position: relative;
+        left: -11px;
+        top: 2px;
+    }
     z-index: 9999;
     .affiche_lang {
         // border: blueviolet 3px solid;
@@ -31,6 +36,9 @@
 
     ul {
         min-width: 9rem !important;
+        @media (max-width: 600px) {
+            min-width: 3rem !important;
+        }
         li {
             a {
                 color: rgb(39, 43, 43);

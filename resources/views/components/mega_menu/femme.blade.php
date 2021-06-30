@@ -8,19 +8,19 @@
                         class="
                             list-group-item list-group-item-action
                             fw-bold
-                            text-primary
+                            text-dark
                             bg-gradient
                         "
                         >Parfums</a
                     >
 
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Cavalli 80</a
                     >
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Azzaro 650
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Aqua de gio
                     </a>
                 </div>
@@ -32,19 +32,19 @@
                         class="
                             list-group-item list-group-item-action
                             fw-bold
-                            text-primary
+                            text-dark
                             bg-gradient
                         "
                         >Parfums</a
                     >
 
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Cavalli 80</a
                     >
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Azzaro 650
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Aqua de gio
                     </a>
                 </div>
@@ -56,19 +56,19 @@
                         class="
                             list-group-item list-group-item-action
                             fw-bold
-                            text-primary
+                            text-dark
                             bg-gradient
                         "
                         >Parfums</a
                     >
 
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Cavalli 80</a
                     >
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Azzaro 650
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Aqua de gio
                     </a>
                 </div>
@@ -80,19 +80,19 @@
                         class="
                             list-group-item list-group-item-action
                             fw-bold
-                            text-primary
+                            text-dark
                             bg-gradient
                         "
                         >Parfums</a
                     >
 
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class=" small list-group-item list-group-item-action"
                         >Cavalli 80</a
                     >
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class=" small list-group-item list-group-item-action"
                         >Azzaro 650
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class=" small list-group-item list-group-item-action"
                         >Aqua de gio
                     </a>
                 </div>
@@ -104,19 +104,19 @@
                         class="
                             list-group-item list-group-item-action
                             fw-bold
-                            text-primary
+                            text-dark
                             bg-gradient
                         "
                         >Parfums</a
                     >
 
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class=" small list-group-item list-group-item-action"
                         >Cavalli 80</a
                     >
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Azzaro 650
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action"
+                    <a href="#" class="small list-group-item list-group-item-action"
                         >Aqua de gio
                     </a>
                 </div>

@@ -1,8 +1,7 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container">
-        <a href="#" class="h6 text-decoration-none text-warning ms-4">
-            <span> <i class="fas fa-star"></i></span>
-            <span class="devenir_vendeur">Devenir vendeur</span>
+        <a href="{{route('devenir.vendeur', App::getLocale())}}" class="h6 text-decoration-none text-warning ms-4">
+            <span> <i class="fas fa-star"></i> Devenir vendeur</span>
         </a>
     </div>
 </nav>
@@ -10,9 +9,11 @@
 {{-- header --}}
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
-        <a class="navbar-brand position-relative" href="{{ url('/') }}">
+        <a class="navbar-brand position-relative" href="{{ route('welcome', App::getLocale()) }}">
             <span class="brand_name">
-                {{ config("app.name", "Laravel") }}
+
+                {{(App::isLocale('ar') ? 'هيتكوم' : config("app.name", "Laravel"))}}
+               
             </span>
             <span
                 ><i
@@ -23,20 +24,23 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div style="margin-left: 242px" class="navbar-nav">
-                <form class="d-flex">
+                {{-- form desktop --}}
+                <form class="d-flex" action="{{ route('search', App::getLocale() ) }}" method="post">
+                    @csrf
                     <div class="input-group">
                         <input
-                            style="min-width: 28rem"
+                      
                             type="text"
-                            class="form-control"
+                            name="search"
+                            class="form-control search_input"
                             placeholder="Rechercher des produits"
                             aria-label="Recipient's username"
-                            aria-describedby="button-addon2"
+                            
                         />
                         <button
                             class="btn btn-outline-primary"
-                            type="button"
-                            id="button-addon2"
+                            type="submit"
+                           
                         >
                             <i class="fas fa-search"></i>
                         </button>
@@ -118,7 +122,7 @@
             <li class="panier nav-item">
                 <a
                     class="btn btn-primary btn-sm"
-                    href="{{ route('register', App::getLocale()) }}"
+                    href="{{ route('panier', App::getLocale()) }}"
                 >
                     <span
                         ><i class="fas fa-cart-plus d-md-inline-flex small"></i
@@ -135,93 +139,76 @@
 </nav>
 
 {{-- menu desktop  --}}
-<div class="container-fluid">
-    <nav
-        class="
-            navbar navbar-expand-md navbar-dark
-            bg-primary bg-gradient
-            text-light
-            shadow-sm
-            sticky-top
-        "
-    >
-        <div class="container">
-            <a class="drawer_toggle" href="#">
-                <span class="navbar-toggler-icon"></span>
-            </a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto gap-3">
-                    <li class="homme_menu_item nav-item position-relative">
-                        <a
-                            class="nav-link menu_principal text-capitalize"
-                            href="#"
-                        >
-                            homme
-                        </a>
-                        @include('components.mega_menu.homme')
-                    </li>
-                    <li class="femme_menu_item nav-item position-relative">
-                        <a
-                            class="menu_principal nav-link text-capitalize"
-                            href="#"
-                            >femme</a
-                        >
-                        @include('components.mega_menu.femme')
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            class="menu_principal nav-link text-capitalize"
-                            href="#"
-                            >maison</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            class="menu_principal nav-link text-capitalize"
-                            href="#"
-                            >enfant</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            class="menu_principal nav-link text-capitalize"
-                            href="#"
-                            >sport</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            class="menu_principal nav-link text-capitalize"
-                            href="#"
-                            >electromenager</a
-                        >
-                    </li>
-                </ul>
-            </div>
+<nav class=" navbar navbar-expand-md bg-light sticky-top ">
 
-            {{-- search form mobile --}}
-            <div class="navbar-nav ms-auto">
-                <form class="d-flex d-md-none">
-                    <div class="input-group">
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Rechercher des produits"
-                            aria-label="Recipient's username"
-                            aria-describedby="button-addon2"
-                        />
-                        <button
-                            class="btn btn-outline-info"
-                            type="button"
-                            id="button-addon2"
-                        >
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+    <div class="container ">
+
+        <a class="drawer_toggle" href="#">
+            <i class="menu_btn fas fa-bars mt-md-2 "></i>
+        </a>
+
+        <div  style='min-width: 100%;' class="collapse navbar-collapse  " id="navbarSupportedContent">
+
+            <ul class="navbar-nav mx-auto  gap-3  " >
+
+                {{-- <li class="homme_menu_item nav-item position-relative">
+                    <a class="nav-link menu_principal text-capitalize  " href="{{route('welcome', App::getLocale())}}">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li> --}}
+
+                <li class="homme_menu_item nav-item position-relative ">
+                    <a class="nav-link menu_principal text-capitalize " href="#">
+                        homme
+                    </a>
+                    @include('components.mega_menu.homme')
+                </li>
+
+                <li class="femme_menu_item nav-item position-relative">
+                    <a class="menu_principal nav-link text-capitalize" href="#"
+                        >femme</a
+                    >
+                    @include('components.mega_menu.femme')
+                </li>
+                <li class="nav-item">
+                    <a class="menu_principal nav-link text-capitalize" href="#"
+                        >maison</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="menu_principal nav-link text-capitalize" href="#"
+                        >enfant</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="menu_principal nav-link text-capitalize" href="#"
+                        >sport</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="menu_principal nav-link text-capitalize" href="#"
+                        >electromenager</a
+                    >
+                </li>
+            </ul>
         </div>
-    </nav>
-</div>
+
+        {{-- search form mobile --}}
+        <div class="navbar-nav w-75 me-3 mx-auto">
+            <form class="d-flex d-md-none"  action="{{ route('search', App::getLocale() ) }}" method="post">
+               @csrf
+                <div class="input-group">
+                    <input type="text" class="search_input_mobile form-control"
+                            placeholder="Rechercher des produits"
+                            aria-label="Recipient's username" />
+                    <button  class="btn btn-outline-info" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
 @include('components.drawer')

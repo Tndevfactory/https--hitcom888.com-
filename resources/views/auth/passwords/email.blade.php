@@ -2,19 +2,19 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center my-5">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header mb-5 fw-bolder text-uppercase text-muted">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            {{ session('status', App::getLocale()) }}
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="{{ route('password.email', App::getLocale()) }}">
                         @csrf
 
                         <div class="form-group row">
@@ -31,7 +31,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-0 my-3">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Send Password Reset Link') }}
@@ -44,4 +44,5 @@
         </div>
     </div>
 </div>
+@include('components.process')
 @endsection

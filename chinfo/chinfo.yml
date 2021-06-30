@@ -11,3 +11,41 @@ Route::get('/', [App\Http\Controllers\Fr\CommandeController::class, 'index']);
 
 // handle laravel error
 php artisan vendor:publish --tag=laravel-errors
+
+
+--------------------------------------------------------------
+
+https://hitcom888.com/
+
+
+private key:
+
+	openssl genrsa -out privatekey.key 2048
+
+public key:
+	
+	openssl rsa -in privatekey.key -pubout -out publickey.key
+
+
+csr :
+
+	openssl req -new -key privatekey.key -out server.csr
+
+TN
+TUNISIA
+TUNIS
+hitcom
+hitcom
+hitcom888.com
+admin@hitcom888.com
+
+verify csr :
+
+ openssl req -text -in server.csr -noout -verify
+
+
+wait to receive certificate and chain from certificate authority
+	CA: crt and crt-bundle based on csr 
+
+self sign the same work as CA:
+	openssl x509 -in server.csr -out server.crt -req privatekey.key -days 365

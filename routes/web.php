@@ -1,31 +1,63 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StatController;
 use App\Http\Controllers\CommandeController;
 
-
-// Route::get('/', function () {//    return view('welcome');// });
-
-Route::redirect('/', '/fr');
+  Route::redirect('/', '/fr');
  
-Route::group(['prefix'=> "{language}"], function(){
+  Route::group(['prefix'=> "{language}"], function(){
 
-// un seul controlleur general est suffisant -> choix du modele suivant $request language
-// un seul dossier blade est suffisant -> changement du view via la traduction des elements statiques
-// les element dynamiques seront en parallele avec le ui suivant le travail duvcontrolleur
+    //welcome
+        Route::get('/', function(){ return view('welcome'); })->name('welcome');
+        
+    //categories 
+        Route::get('/category', function(){ return view('pages.market.category.category'); })->name('category');
+      
 
-  //comming soon
-  Route::get('/', function(){ return view('pages.lab.gsap'); })->name('coming');
+    //produits 
+        Route::get('/produit', function(){ return view('pages.market.produit.produit'); })->name('produit');
+  
 
-  //  Route::get('/', function(){ return view('welcome');})->name('welcome');
- //commande
-    Route::get('/commande', [CommandeController::class, 'index'])->name('commande.details');
- //notification de paiement
-    Route::get('/paiement', function(){return view('paiement.details');})->name('paiement.details');
-    Route::get('/paiement/notification', function(){return view('paiement.reussi');})->name('paiement.notification');
-    Route::get('/paiement/reussi', function(){return view('paiement.reussi');})->name('paiement.reussi');
-    Route::get('/paiement/erreur', function(){return view('paiement.erreur');})->name('paiement.erreur');
-    Auth::routes();
+    //rating
+        Route::get('/rating', function(){ return view('pages.market.rating.rating'); })->name('rating');
+        
+    //search
+        Route::post('/search', function(){ return view('pages.market.search.search'); })->name('search');
+      
+
+    //panier
+        Route::get('/panier',function(){ return view('pages.market.panier.panier'); })->name('panier');
+        
+    //commandes
+        Route::get('/commande', [CommandeController::class, 'index'])->name('commande');
+
+    //paiements
+        Route::get('/paiement/details', function(){return view('pages.market.paiement.details');})->name('paiement.details');
+        Route::get('/paiement/notification', function(){return view('pages.market.paiement.reussi');})->name('paiement.notification');
+        Route::get('/paiement/reussi', function(){return view('pages.market.paiement.reussi');})->name('paiement.reussi');
+        Route::get('/paiement/erreur', function(){return view('pages.market.paiement.erreur');})->name('paiement.erreur');
+
+    //auth
+        Auth::routes();
+        Route::get('/devenir-vendeur',function(){ return view('auth.register-vendeur'); })->name('devenir.vendeur');
+
+    //dashboards profile under middleware 
+        Route::get('/admin',function(){ return view('pages.dashboards.admin.admin'); })->name('admin');
+        Route::get('/client',function(){ return view('pages.dashboards.client.client'); })->name('client');
+        Route::get('/employee',function(){ return view('pages.dashboards.employee.employee'); })->name('employee');
+        Route::get('/manager',function(){ return view('pages.dashboards.manager.manager'); })->name('manager');
+        Route::get('/vendeur',function(){ return view('pages.dashboards.vendeur.vendeur'); })->name('vendeur');
+
+    //dashboards admin stats axios and chart js here
+        Route::get('/stats', [StatController::class, 'index'])->name('stats');
+        
+       
+
+    
+
   });
+
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
