@@ -9,8 +9,10 @@
 @import "./views/components/footer.blade";
 
 // megamenu sub
-@import "./views/components/mega_menu/homme.blade";
-@import "./views/components/mega_menu/femme.blade";
+@import "./views/components/mega_menu/table_art_mm.blade";
+@import "./views/components/mega_menu/decorations_mm.blade";
+@import "./views/components/mega_menu/bijoux_mm.blade";
+@import "./views/components/mega_menu/habillement_mm.blade";
 
 // components
 @import "./views/components/lang_switcher.blade";

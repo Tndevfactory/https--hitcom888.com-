@@ -1,10 +1,10 @@
 export function welcomeOverlay() {
-    CSSPlugin.defaultForce3D = true;
+    // CSSPlugin.defaultForce3D = true;
 
-    gsap.defaults({ ease: "none", force3D: true });
+    // gsap.defaults({ ease: "none", force3D: true });
     let boxWelcome = document.querySelectorAll(".box_welcome");
-    let overlayWelcomeTl = gsap.timeline({ ease: "power1.out" });
-    // overlayWelcomeTl.pause();
+    let overlayWelcomeTl1 = gsap.timeline({ ease: "none" });
+    let overlayWelcomeTl2 = gsap.timeline({ ease: "none" });
 
     boxWelcome.forEach((item) => {
         let overlayWelcome = item.children[1];
@@ -14,27 +14,23 @@ export function welcomeOverlay() {
         function anim() {
             gsap.set(detailWelcome, { x: 0 });
             gsap.set(commanderWelcome, { x: 0 });
-            overlayWelcomeTl
-                .to(overlayWelcome, {
-                    background: "rgba(0,0,0,0.5)",
-                    scaleY: 1,
-                    duration: 0,
-
-                    transformOrigin: "left",
-                })
-                .from(detailWelcome, { x: -40, duration: 0.1 })
-                .from(commanderWelcome, { x: 40, duration: 0.1 }, "<");
+            overlayWelcomeTl1
+                .from(detailWelcome, { x: -40, autoAlpha: 1, duration: 0.4205 })
+                .from(
+                    commanderWelcome,
+                    { x: 40, autoAlpha: 1, duration: 0.4205 },
+                    "<"
+                );
         }
+
         function deAnim() {
-            overlayWelcomeTl
-                .to(detailWelcome, { x: -40, duration: 0 })
-                .to(commanderWelcome, { x: 40, duration: 0 }, "<")
-                .to(overlayWelcome, {
-                    background: "rgba(0,0,0,0.84)",
-                    scaleY: 0,
-                    duration: 0,
-                    transformOrigin: "left",
-                });
+            overlayWelcomeTl2
+                .to(detailWelcome, { x: -40, autoAlpha: 0, duration: 0.5 }, "<")
+                .to(
+                    commanderWelcome,
+                    { x: 40, autoAlpha: 0, duration: 0.5 },
+                    "<"
+                );
         }
 
         item.addEventListener("mouseenter", (e) => {
@@ -43,13 +39,20 @@ export function welcomeOverlay() {
             detailWelcome.addEventListener("click", (e) => {
                 console.log("details clicked");
             });
+
             commanderWelcome.addEventListener("click", (e) => {
                 console.log("commander clicked");
             });
         });
+        item.removeEventListener("mouseenter", (e) => {
+            console.log("");
+        });
 
         item.addEventListener("mouseleave", (e) => {
             deAnim();
+        });
+        item.removeEventListener("mouseleave", (e) => {
+            console.log("");
         });
     });
 }

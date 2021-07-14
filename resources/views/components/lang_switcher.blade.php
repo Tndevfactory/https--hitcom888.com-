@@ -1,4 +1,7 @@
-<div id="lang-switcher" class="dropdown">
+<div
+    id="lang-switcher"
+    class="dropdown {{App::isLocale('ar') ? 'lang_switcher_ar' : 'lang_switcher_fr'}}"
+>
     <button
         class="affiche_lang btn btn-sm dropdown-toggle"
         type="button"
@@ -29,7 +32,10 @@
                 href="{{ route(Route::currentRouteName() , 'ar') }}"
             >
                 <div class="lang_box lang_box_ar"></div>
-                <span class="arabic d-none d-md-block small">العربية</span>
+                <span
+                    class="arabic d-none d-md-block small  {{App::isLocale('ar') ? 'me-2 arabic_ar' : 'arabic_fr'}}"
+                    >العربية</span
+                >
             </a>
         </li>
         <li>
@@ -38,7 +44,10 @@
                 href="{{ route(Route::currentRouteName() , 'en') }}"
             >
                 <div class="lang_box lang_box_uk"></div>
-                <span class="d-none d-md-block small">English</span>
+                <span
+                    class="d-none d-md-block small  {{App::isLocale('ar') ? 'me-2' : ''}}"
+                    >English</span
+                >
             </a>
         </li>
         <li>
@@ -47,7 +56,10 @@
                 href="{{ route(Route::currentRouteName() , 'fr') }}"
             >
                 <div class="lang_box lang_box_fr"></div>
-                <span class="d-none d-md-block small">Français</span>
+                <span
+                    class="d-none d-md-block small  {{App::isLocale('ar') ? 'me-2' : ''}}"
+                    >Français</span
+                >
             </a>
         </li>
     </ul>

@@ -1,10 +1,25 @@
-#lang-switcher {
+%lang_switcher {
+    z-index: 9999;
+    position: relative;
+
     @media (max-width: 600px) {
-        position: relative;
-        left: -11px;
+        left: -19px;
         top: 2px;
     }
-    z-index: 9999;
+}
+.lang_switcher_ar {
+    @extend %lang_switcher;
+    left: 13px;
+    @media (max-width: 600px) {
+        left: -1px;
+        top: 2px;
+    }
+}
+.lang_switcher_fr {
+    @extend %lang_switcher;
+}
+
+#lang-switcher {
     .affiche_lang {
         // border: blueviolet 3px solid;
         height: 45px;
@@ -50,8 +65,12 @@
                     margin-left: 1rem;
                     font-size: 0.9rem;
                 }
-                .arabic {
-                    font-size: 1.1rem;
+                .arabic_ar {
+                    font-size: 1rem;
+                }
+                .arabic_fr {
+                    font-size: 1.15rem;
+                    font-weight: 500;
                 }
             }
         }

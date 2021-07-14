@@ -1,15 +1,34 @@
 #welcome {
     .category_welcome {
-        background-color: #e0cb88;
+        background-image: url("/img/categories/cat2.jpg");
+        background-size: cover;
+        background-position: 10% 10%;
+        background-attachment: fixed;
+
         a {
             text-decoration: none;
-            color: #312a0a !important;
+            color: #f8fafc !important;
+            @media (max-width: 600px) {
+                font-size: 0.9rem !important;
+            }
         }
     }
     .box_welcome {
         cursor: pointer;
+        border-radius: 6px;
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0);
+        transition: 5s all ease-in-out;
         &:hover {
-            box-shadow: 1px 1px 15px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 19px 3px rgba(0, 0, 0, 0.1),
+                200px -200px 10px 1px rgba(248, 248, 248, 0.5) inset;
+        }
+        &:hover .overlay_welcome {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        &:hover .details_welcome,
+        &:hover .commander_welcome {
+            visibility: visible;
         }
     }
     .promo_rate_welcome {
@@ -36,9 +55,13 @@
 
     .promo_percent {
         background-color: #d63535;
-        width: 1.75rem;
-        height: 1.75rem;
+        width: 2.2rem;
+        height: 2.2rem;
         border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         @media (max-width: 600px) {
             margin-right: 0.51rem;
             width: 1.6rem;
@@ -51,6 +74,18 @@
     .promo_percent_text {
         color: white;
         font-size: 0.7rem !important;
+        position: relative;
+        left: 2px;
+        &:before {
+            position: absolute;
+            content: "";
+            background-color: rgb(228, 228, 221);
+            width: 3.5px;
+            height: 2px;
+
+            top: 5px;
+            left: -5px;
+        }
         @media (max-width: 600px) {
             font-size: 0.55rem !important;
         }
@@ -59,36 +94,44 @@
     .overlay_welcome {
         position: absolute;
         width: 100%;
-        height: 55%;
+        height: 60%;
+
         @media (max-width: 600px) {
-            height: 35%;
+            height: 55%;
         }
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0);
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         gap: 1rem;
-        border-radius: 6px;
-        transform: scaleY(0);
+        border-radius: 1px;
 
         .details_welcome {
             background-color: #007bcf;
-            color: rgb(255, 236, 151);
+            color: rgb(255, 255, 255);
             transition: 0.5s background-color;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
+            visibility: hidden;
 
             &:hover {
-                background-color: darken(#9dcef0, 5%);
+                background-color: lighten(#1594ee, 5%);
+            }
+            @media (max-width: 600px) {
+                font-size: 0.75rem;
             }
         }
         .commander_welcome {
             background-color: #13af47;
-            color: white;
+            color: rgb(255, 255, 255);
             transition: 0.5s background-color;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
+            visibility: hidden;
 
             &:hover {
-                background-color: darken(#13af47, 5%);
+                background-color: lighten(#1a9b45, 8%);
+            }
+            @media (max-width: 600px) {
+                font-size: 0.75rem;
             }
         }
     }
@@ -114,25 +157,68 @@
         }
     }
     .product_description_welcome {
-        color: rgb(156, 156, 161);
+        color: rgb(105, 105, 105);
         @media (max-width: 600px) {
             font-size: 0.75rem !important;
         }
     }
-    .price_new {
+
+    %price_new {
         font-family: "Oswald", sans-serif;
         color: rgb(11, 121, 79);
         font-weight: 700;
+        font-size: 1.1rem;
+        position: relative;
         @media (max-width: 600px) {
-            font-size: 0.7rem !important;
+            font-size: 0.9rem !important;
+        }
+        &:after {
+            position: absolute;
+            font-family: "Oswald", sans-serif !important;
+            color: rgb(11, 121, 79) !important;
+        }
+    }
+    .price_new_fr {
+        @extend %price_new;
+
+        &:after {
+            content: "\20AC"; //euro
+            font-size: 1rem;
+            top: -5px;
+            right: -5px;
+        }
+    }
+    .price_new_ar {
+        @extend %price_new;
+
+        &:after {
+            content: "دت";
+            font-size: 1.05rem;
+            top: -5px;
+            left: -17px;
+        }
+    }
+    .price_new_en {
+        @extend %price_new;
+
+        &:after {
+            content: "\0024"; //dollar
+            font-size: 1rem;
+            top: -5px;
+            right: -5px;
         }
     }
     .price_old {
         font-family: "Oswald", sans-serif;
         color: rgb(11, 121, 79);
         font-weight: 700;
+        font-size: 1rem;
         @media (max-width: 600px) {
             font-size: 0.7rem !important;
         }
     }
+
+    // arabic rtl scss
+    //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 }

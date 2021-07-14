@@ -16,6 +16,7 @@ class CreateFrCommandesTable extends Migration
         Schema::create('fr_commandes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            
             $table->timestamps();
         });
     }

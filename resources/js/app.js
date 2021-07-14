@@ -1,7 +1,6 @@
 require("./bootstrap");
 
-import { openDrawer } from "./views/components/navbar.blade";
-import { closeDrawer } from "./views/components/drawer.blade";
+import { closeDrawer, openDrawer } from "./views/components/drawer.blade";
 import { backToTop } from "./views/components/back_to_top.blade";
 
 import { welcomeOverlay } from "./views/welcome.blade";
@@ -51,7 +50,7 @@ window.onload = function () {
     showRegisterConfirmPassword();
 
     //welcome page
-    welcomeOverlay();
+    //welcomeOverlay();
     grabModalConsulterPanier();
 
     //search page

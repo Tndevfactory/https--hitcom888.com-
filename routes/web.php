@@ -1,7 +1,12 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\StatController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommandeController;
 
   Route::redirect('/', '/fr');
@@ -23,7 +28,7 @@ use App\Http\Controllers\CommandeController;
         Route::get('/rating', function(){ return view('pages.market.rating.rating'); })->name('rating');
         
     //search
-        Route::post('/search', function(){ return view('pages.market.search.search'); })->name('search');
+        Route::get('/search', function(){ return view('pages.market.search.search'); })->name('search');
       
 
     //panier
@@ -51,10 +56,18 @@ use App\Http\Controllers\CommandeController;
 
     //dashboards admin stats axios and chart js here
         Route::get('/stats', [StatController::class, 'index'])->name('stats');
-        
-       
 
-    
+        // import zip and excel
+        Route::post('/import', [LabController::class, 'fImport'])->name('fImport');
+        Route::post('/excel-import', [LabController::class, 'excelImport'])->name('excelImport');
+        Route::get('/excel-export', [LabController::class, 'excelExport'])->name('excelExport');
+        Route::post('/zip-import-extract', [LabController::class, 'zipImportExtract'])->name('zipImportExtract');
+         
+
+        // ref https://www.positronx.io/laravel-import-expert-excel-and-csv-file-tutorial-with-example/
+       Route::get('file-import-export', [UserController::class, 'fileImportExport']);
+        Route::post('file-import', [UserController::class, 'fileImport'])->name('file-import');
+        Route::get('file-export', [UserController::class, 'fileExport'])->name('file-export');
 
   });
 

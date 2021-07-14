@@ -1,206 +1,36 @@
-<aside id="drawer" class="drawer">
-   
-    <button type="button" class="close_drawer btn-sm btn-close"></button>
-  
-    <h4 class="b-example-divider"><span class="text-primary">Menu</span></h4>
-    
-    <div class="border-top my-3 border-primary"></div>
-    
-    <div class="flex-shrink-0 ms-3 ">
+<aside
+    id="drawer"
+    class="drawer {{App::isLocale('ar') ? 'drawer_initial_position_ar' : 'drawer_initial_position_fr'}}  "
+>
+    <a
+        href="#"
+        class=" {{App::isLocale('ar') ? 'close_drawer_ar' : 'close_drawer_fr'}} close_drawer btn-sm "
+    >
+        <i class="far fa-window-close text-white"></i>
+    </a>
+
+    <span class="b-example-divider h5">
+        <span class="text-info">{{ __("Market Menu") }}</span>
+    </span>
+
+    <div class="border-top mt-3 border-primary"></div>
+    <div class="border-top my-1 border-info"></div>
+    <div class="border-top mb-3 border-primary"></div>
+
+    <div class="flex-shrink-0 ms-3">
         <ul class="list-unstyled ps-0">
-
-            @for ($i = 0; $i < 12; $i++)
-
-            <li class="mb-1">
-                <a
-                    href="#"
-                    class="
-                        btn btn-toggle
-                        align-items-center
-                        btn-sm
-                        rounded
-                        collapsed
-                    "
-                    data-bs-toggle="collapse"
-                    data-bs-target="#home-collapse{{ $i }}"
-                    aria-expanded="false"
-                >
-                   
-                    <i class="fas fa-male  text-primary"></i>
-                    <span> Maison</span
-                    ><i class="ms-1 fas fa-chevron-right"></i>
-                </a>
-
-                <div class="collapse ms-3" id="home-collapse{{ $i }}">
-                    <ul
-                        class="
-                            btn-toggle-nav
-                            list-unstyled
-                            fw-normal
-                            pb-1
-                            small
-                        "
-                    >
-                        <li class="my-2">
-                            <a
-                                href="#"
-                                class="
-                                    btn btn-toggle btn-sm
-                                    align-items-center
-                                    rounded
-                                    collapsed
-                                "
-                                data-bs-toggle="collapse"
-                                data-bs-target="#nestedhome-collapse{{ $i }}"
-                                aria-expanded="false"
-                            >
-                              
-                                <i class="fas fa-female  text-info"></i>
-                                <span> Accessoires salle de bain</span
-                                ><i class="ms-1 fas fa-chevron-right"></i>
-                            </a>
-                            <div
-                                class="collapse ms-4"
-                                id="nestedhome-collapse{{ $i }}"
-                            >
-                                <ul
-                                    class="
-                                        btn-toggle-nav
-                                        list-unstyled
-                                        fw-normal
-                                        pb-1
-                                        small
-                                    "
-                                >
-                                    <li class="my-2">
-                                        <a href="#" class="link-dark rounded">
-                                            Vases1</a
-                                        >
-                                    </li>
-                                    <li class="my-2">
-                                        <a href="#" class="link-dark rounded"
-                                            >Peinture</a
-                                        >
-                                    </li>
-                                    <li class="mt-2">
-                                        <a href="#" class="link-dark rounded"
-                                            >Joints Accessoires salle de bain</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="my-2">
-                            <a
-                                href="#"
-                                class="
-                                    btn btn-toggle btn-sm
-                                    align-items-center
-                                    rounded
-                                    collapsed
-                                "
-                                data-bs-toggle="collapse"
-                                data-bs-target="#nestedhome-collapse{{ $i }}{{
-                                    $i
-                                }}"
-                                aria-expanded="false"
-                            >
-                                <span> Decoration2</span
-                                ><i class="ms-1 fas fa-chevron-right"></i>
-                            </a>
-                            <div
-                                class="collapse ms-4"
-                                id="nestedhome-collapse{{ $i }}{{ $i }}"
-                            >
-                                <ul
-                                    class="
-                                        btn-toggle-nav
-                                        list-unstyled
-                                        fw-normal
-                                        pb-1
-                                        small
-                                    "
-                                >
-                                    <li class="my-2">
-                                        <a href="#" class="link-dark rounded">
-                                            Vases1</a
-                                        >
-                                    </li>
-                                    <li class="my-2">
-                                        <a href="#" class="link-dark rounded"
-                                            >Peinture</a
-                                        >
-                                    </li>
-                                    <li class="mt-2">
-                                        <a href="#" class="link-dark rounded"
-                                            >Joints Accessoires salle de bain</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="mt-2">
-                            <a
-                                href="#"
-                                class="
-                                    btn btn-toggle btn-sm
-                                    align-items-center
-                                    rounded
-                                    collapsed
-                                "
-                                data-bs-toggle="collapse"
-                                data-bs-target="#nestedhome-collapse{{ $i }}{{
-                                    $i
-                                }}{{ $i }}"
-                                aria-expanded="false"
-                            >
-                                <span> Decoration3</span
-                                ><i class="ms-1 fas fa-chevron-right"></i>
-                            </a>
-                            <div
-                                class="collapse ms-4"
-                                id="nestedhome-collapse{{ $i }}{{ $i }}{{ $i }}"
-                            >
-                                <ul
-                                    class="
-                                        btn-toggle-nav
-                                        list-unstyled
-                                        fw-normal
-                                        pb-1
-                                        small
-                                    "
-                                >
-                                    <li class="my-2">
-                                        <a href="#" class="link-dark rounded">
-                                            Vases1</a
-                                        >
-                                    </li>
-                                    <li class="my-2">
-                                        <a href="#" class="link-dark rounded"
-                                            >Peinture</a
-                                        >
-                                    </li>
-                                    <li class="mt-2">
-                                        <a href="#" class="link-dark rounded"
-                                            >Joints Accessoires salle de bain</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            @endfor
+            @include('components.drawer_sections.table_art')
+            @include('components.drawer_sections.decorations')
+            @include('components.drawer_sections.bijoux')
+            @include('components.drawer_sections.habillement')
         </ul>
     </div>
 
     <div class="drawer_copyright">
-       <span class="drawer_copyright_text "> 
-        <a href="#"> &copy; hitcom market <i class="fas fa-trademark"></i></a>  
-        </span>  
+        <span class="drawer_copyright_text">
+            <a href="#" class="text-info">
+                &copy; {{ __("hitcom market") }} <i class="fas fa-trademark"></i
+            ></a>
+        </span>
     </div>
 </aside>

@@ -1,10 +1,24 @@
-.back_to_top {
-    background-color: transparent;
+%back_to_top_pos {
     position: fixed;
     right: 2rem;
     bottom: 5rem;
+}
+.back_to_top_pos_ar {
+    @extend %back_to_top_pos;
+    @media (max-width: 600px) {
+        right: 20rem;
+        bottom: 5rem;
+    }
+}
+.back_to_top_pos_fr {
+    @extend %back_to_top_pos;
+}
+
+.back_to_top {
+    background-color: transparent;
     z-index: 999;
     display: none;
+
     .back_to_top_btn {
         background-color: rgb(36, 39, 51);
         display: inline-block;

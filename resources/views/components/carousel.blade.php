@@ -3,7 +3,7 @@
     class="carousel slide d-none d-md-block"
     data-bs-ride="carousel"
 >
-    <div class="carousel-indicators">
+    <div class="carousel-indicators d-flex justify-content-end mb-5">
         <button
             type="button"
             data-bs-target="#carouselExampleIndicators"
@@ -11,45 +11,41 @@
             class="active"
             aria-current="true"
             aria-label="Slide 1"
-        >
-        </button>
+        ></button>
 
         <button
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="1"
             aria-label="Slide 2"
-        >
-        </button>
+        ></button>
 
         <button
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="2"
             aria-label="Slide 3"
-        >
-        </button>
-
+        ></button>
     </div>
 
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img
-                src="https://picsum.photos/1800/400"
+                src="{{ asset('/img/carousel/1.jpg') }}"
                 class="d-block w-100"
                 alt="..."
             />
         </div>
         <div class="carousel-item">
             <img
-                src="https://picsum.photos/1801/400"
+                src="{{ asset('/img/carousel/2.jpg') }}"
                 class="d-block w-100"
                 alt="..."
             />
         </div>
         <div class="carousel-item">
             <img
-                src="https://picsum.photos/1802/400"
+                src="{{ asset('/img/carousel/3.jpg') }}"
                 class="d-block w-100"
                 alt="..."
             />
@@ -75,5 +71,4 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-    
 </div>

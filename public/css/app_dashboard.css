@@ -9,12 +9,19 @@ html {
   margin: 0;
 }
 
+.roboto_font {
+  font-family: "Roboto", sans-serif;
+}
+
+.tajawal_font {
+  font-family: "Tajawal", sans-serif;
+}
+
 body {
   color: #333;
   width: 100%;
   min-height: 100vh;
   background: #f8fafc;
-  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
