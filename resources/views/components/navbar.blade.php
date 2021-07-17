@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light">
     <div class="container">
         <a
             href="{{route('devenir.vendeur', App::getLocale())}}"

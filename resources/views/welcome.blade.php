@@ -41,7 +41,15 @@
             <div class="row row-cols-2 row-cols-sm-2 row-cols-md-5 g-3">
                 @for ($i = 0; $i < 10; $i++)
                 <div class="col">
-                    <div class="card box_welcome position-relative rounded-3">
+                    <div
+                        class="
+                            card
+                            box_welcome
+                            shadow-sm
+                            position-relative
+                            rounded-3
+                        "
+                    >
                         <div
                             class="
                                 promo_rate_welcome
@@ -52,16 +60,17 @@
                             <div
                                 class="
                                     d-md-flex
+                                    flex-column
                                     gap-2
-                                    justify-content-center
-                                    align-items-center
+                                    justify-content-start
+                                    align-items-start
                                 "
                             >
                                 <div
                                     class="
                                         d-flex
-                                        justify-content-center
-                                        align-items-center
+                                        justify-content-start
+                                        align-items-start
                                         mb-2 mb-md-0
                                     "
                                 >
@@ -75,6 +84,19 @@
                                         "
                                         >{{ __("Promotion") }}</span
                                     >
+                                </div>
+                                <div
+                                    class="
+                                        d-flex
+                                        justify-content-start
+                                        align-items-center
+                                    "
+                                >
+                                    <span
+                                        class="nouveau_text p-1 badge rounded"
+                                    >
+                                        {{ __("New") }}
+                                    </span>
                                 </div>
                             </div>
 
@@ -121,7 +143,7 @@
                             alt="..."
                         />
 
-                        <div class="card-body">
+                        <div class="card-body position-relative">
                             <div
                                 class="
                                     name_rate_avis_welcome
@@ -214,17 +236,6 @@
                                     "
                                     >1470.55</a
                                 >
-                            </div>
-                            <div
-                                class="
-                                    d-flex
-                                    justify-content-start
-                                    align-items-center
-                                "
-                            >
-                                <span class="nouveau_text p-1 badge rounded">
-                                    {{ __("New") }}
-                                </span>
                             </div>
                         </div>
                     </div>

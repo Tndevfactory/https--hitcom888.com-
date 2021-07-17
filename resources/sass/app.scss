@@ -18,12 +18,14 @@
 @import "./views/components/lang_switcher.blade";
 @import "./views/components/drawer.blade";
 @import "./views/components/back_to_top.blade";
+@import "./views/components/breadcrumb.blade";
 @import "./views/components/process.blade";
 @import "./views/components/gsap_carousel.blade";
 
 // market
 @import "./views/pages/market/produit/produit.blade";
-@import "./views/pages/market/search/search.blade";
+@import "./views/pages/market/search/search_col.blade";
+@import "./views/pages/market/search/search_row.blade";
 @import "./views/pages/market/panier/panier.blade";
 @import "./views/pages/market/category/category.blade";
 
